@@ -155,12 +155,13 @@ body{
             flex-direction: column;
             align-items: center;
             gap: 1.4rem;
-            position: relative;
+           
         }
 
 
             .function-btn{
                 @include function-button;
+                 position: relative;
             }
 
 
@@ -180,19 +181,22 @@ body{
                 
             }
 
-
-            /*having div inside button causing error w3c*/
             .function-number{
-                @include function-number;
+                position: absolute;
+                right: 97%;
+                top: 29%;
+                width: 24px;
+                height: 24px;
+                flex-shrink: 0;
+                color: white;
+                background-color: $primary-color;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
-            .num2{
-                top: 37%;
-            }
-
-            .num3{
-                top: 73%;
-            }
+           
     }
 
 
@@ -268,15 +272,27 @@ body{
             width: 1.37rem;
             height: 1.31rem;
             flex-shrink: 0;
-
+            border: none;
         }
 
-        .fa-heart-filled{
-            
-            fill: $primary-color !important;
+        .liked-heart{
+            fill: linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%);
+            opacity: 0;
         }
 
+        
+        /*hide and show hearts*/
+        .heart1, .heart3, .heart4{
+            opacity: 1;
+        }
 
+        .heart2{
+            opacity: 0;
+        }
+
+        .like-heart2{
+            opacity: 1;
+        }
 
 
 
