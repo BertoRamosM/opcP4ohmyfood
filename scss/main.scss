@@ -1,0 +1,280 @@
+/************* 
+Run compiler with following command:
+
+        sass scss/main.scss assets/styles.css   
+
+        OR
+        
+        sass --watch scss/main.scss:assets/styles.css 
+   ************************/
+
+@import "_variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+*{
+    
+    /*border-box dosnt change the sizes of items based on margin or pading*/
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+
+
+/*Mobile first*/
+
+@media screen and (max-width: 768px){
+
+
+    /*HEADER*/
+    .header{
+    background-color: $white-color;
+    display: flex;
+    width: 100vw;
+    height: 3.93rem;
+    padding: 0.87rem 5.56rem 0.81rem 5.56rem;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+
+
+
+        .head-logo{
+        display: flex;
+        width: 197px;
+        height: 36px;
+        padding: 0px 19px 0px 16px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        }
+    }
+
+    
+
+    /*LOCATION*/
+    .location{
+    background-color: $grey-color;
+    display: flex;
+    width: 100vw;
+    height: 3.12rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.06rem;
+    flex-shrink: 0;
+
+
+
+        .fa-location-dot{
+        @include small-icon;
+        }
+
+
+        .location-text{
+        font-family: "Roboto";
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        }
+    }
+
+
+    /*INFORMATION*/
+    .information{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: $light-grey-color;
+        
+        
+
+
+        .info-title{
+            color: #000;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            padding: 0px 1rem 0px 1rem;
+        }
+
+
+        .info-subtitle{
+            color: #353535;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 1.12rem;
+            font-style: normal;
+            font-weight: 100;
+            line-height: normal;
+            margin-top: 0px;
+            padding: 0px 1rem 0px 1rem;
+
+        }
+
+
+        .btn-gradient{
+            @include button-gradient;
+            margin-bottom: 3rem;
+            
+        }
+    }
+
+
+    /*FONCTIONNEMENT*/
+    .function{
+        width: 100%;
+        height: 27.5rem;
+        flex-shrink: 0;
+        background-color: $white-color;
+
+
+        .function-title{
+            color: #000;    
+            font-family: Roboto;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+
+        .function-btn-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.4rem;
+        }
+
+
+            .function-btn{
+                @include function-button;
+            }
+
+
+            .function-icon{
+                @include small-icon;
+                margin-right: 1rem;
+                color: $dark-grey-color;
+            }
+
+            /*this icon dosnt align well*/
+            .fa-mobile-screen-button{
+                margin-right: 0.4rem;
+            }
+
+            .fa-store{
+                color: $primary-color;
+                
+            }
+
+            .function-number{
+                position:absolute;
+                margin-right: 79%;
+                width: 24px;
+                height: 24px;
+                flex-shrink: 0;
+                color: white;
+                background-color: $primary-color;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    }
+
+
+
+    /*RESTAURANTS*/
+    .restaurants{
+        background-color: $light-grey-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1.1rem;
+    }
+
+
+    .restaurants-title{
+        color: #000;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        width: 17.1rem;
+        align-self: flex-start;
+        flex-shrink: 0;
+        margin-bottom: 0;
+        padding-left: 5%;
+    }
+
+    .restaurant-card{
+       @include restaurant-card;
+    }
+
+        .restaurant-image{
+            @include restaurant-image;
+        }
+
+        .restaurant-info{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 1.5rem;
+            gap: 0;
+            position: relative;
+        }
+
+        .restaurants-titles h2{
+            color: #000;
+            font-family: Roboto;
+            font-size: 1.1rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+
+        .restaurants-titles h3{
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+            color: #000;
+            font-family: Roboto;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+
+        .fa-heart{
+            position: absolute;
+            left: 90%;
+            bottom: 30%;
+            width: 1.37rem;
+            height: 1.31rem;
+            flex-shrink: 0;
+            
+        }
+
+        .fa-heart-filled{
+            color: $primary-color;
+            fill: $primary-color;
+        }
+
+}
+

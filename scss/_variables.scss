@@ -1,0 +1,88 @@
+$primary-color: #9356DC;
+
+$secondary-color: #FF79DA;
+
+$tertiary-color: #99E2D0;
+
+$white-color: #FFF;
+
+$black-color: #101010;
+
+$grey-color: #EAEAEA;
+
+$light-grey-color:  #f5f6f6;
+
+$dark-grey-color: #7E7E7E;
+
+$gradient-color: var(--Button-Gradient, linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%));;
+
+
+/*small icon style*/
+@mixin small-icon{
+    color: black;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+
+}
+/*BUTTON GRADIENT STYLE*/
+@mixin button-gradient {
+    color: $white-color;
+    width: 13.62rem;
+    height: 3.15rem;
+    flex-shrink: 0;
+    border-radius: 25px;
+    background: var(--Button-Gradient, linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%));
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+  }
+
+
+  /*FUNCTION BUTTON*/
+  @mixin function-button {
+  width: 80%;
+  height: 4.5rem;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background-color: $light-grey-color;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+
+/*RESTAURANT CARDS AND IMAGES*/
+@mixin restaurant-card {
+    height: auto;
+    align-self: stretch;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+
+  }
+  
+  @mixin restaurant-image {
+    object-fit: cover;
+    width: 95%;
+    height: 14.4rem;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 20px;
+  }
