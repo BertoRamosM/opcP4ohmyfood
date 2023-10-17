@@ -1,21 +1,19 @@
-/************* 
-Run compiler with following command:
+/*************Run compiler with following command:
 
         sass scss/main.scss assets/styles.css   
 
         OR
         
-        sass --watch scss/main.scss:assets/styles.css 
-   ************************/
+        sass --watch scss/main.scss:assets/styles.css************************/
 
 @import "_variables";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap');
 
 *{
     
     /*border-box dosnt change the sizes of items based on margin or pading*/
     box-sizing: border-box;
-    border: 1px solid red;
 }
 
 body{
@@ -47,9 +45,9 @@ body{
 
         .head-logo{
         display: flex;
-        width: 197px;
-        height: 36px;
-        padding: 0px 19px 0px 16px;
+        width: 12.3rem;
+        height: 2.25rem;
+        padding: 0px 1.18rem 0px 1rem;
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
@@ -106,7 +104,7 @@ body{
             font-style: normal;
             font-weight: 600;
             line-height: normal;
-            padding: 0px 1rem 0px 1rem;
+            padding: 0 1rem 0 1rem;
         }
 
 
@@ -118,8 +116,8 @@ body{
             font-style: normal;
             font-weight: 100;
             line-height: normal;
-            margin-top: 0px;
-            padding: 0px 1rem 0px 1rem;
+            margin-top: 0;
+            padding: 0 1rem 0 1rem;
 
         }
 
@@ -157,6 +155,7 @@ body{
             flex-direction: column;
             align-items: center;
             gap: 1.4rem;
+            position: relative;
         }
 
 
@@ -181,18 +180,18 @@ body{
                 
             }
 
+
+            /*having div inside button causing error w3c*/
             .function-number{
-                position:absolute;
-                margin-right: 79%;
-                width: 24px;
-                height: 24px;
-                flex-shrink: 0;
-                color: white;
-                background-color: $primary-color;
-                border-radius: 20px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include function-number;
+            }
+
+            .num2{
+                top: 37%;
+            }
+
+            .num3{
+                top: 73%;
             }
     }
 
@@ -262,19 +261,69 @@ body{
         }
 
         .fa-heart{
+            font-size: 1.5rem;
             position: absolute;
             left: 90%;
             bottom: 30%;
             width: 1.37rem;
             height: 1.31rem;
             flex-shrink: 0;
-            
+
         }
 
         .fa-heart-filled{
-            color: $primary-color;
-            fill: $primary-color;
+            
+            fill: $primary-color !important;
         }
 
+
+
+
+
+        /*FOOTER*/
+        .footer{
+            display: flex;
+            width: 100%;
+            padding: 1.37rem 1.56rem;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            background-color: #353535;
+            color: white;
+            padding-left: 3rem;
+
+
+
+                .logo-footer{
+                    width: 8.599rem;
+                    height: 1.68rem;
+                    flex-shrink: 0;
+                    color: #FFF;
+                    font-family: Shrikhand;
+                    font-size: 1.1rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;    
+                    margin-bottom: 0;
+                }
+
+                .footer-icon{
+                    width: 0.68rem;
+                    height: 0.81rem;
+                    flex-shrink: 0;
+                    padding-right: 1.5rem;
+                }
+
+
+                .footer-menu{
+                   margin-bottom: 1px;
+                }
+
+                .footer-menu > *{
+                    height: 0.43rem;
+                }
+
+                
+        }
 }
 

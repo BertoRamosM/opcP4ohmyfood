@@ -64,6 +64,23 @@ $gradient-color: var(--Button-Gradient, linear-gradient(193deg, $secondary-color
   line-height: normal;
 }
 
+/*FUNCTION BUTTON NUMBERS 1 2 3*/
+@mixin function-number {
+    position: absolute;
+    right: 85%;
+    margin-top: 7%;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: white;
+    background-color: $primary-color;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 
 /*RESTAURANT CARDS AND IMAGES*/
 @mixin restaurant-card {

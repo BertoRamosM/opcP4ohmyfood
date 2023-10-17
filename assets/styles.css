@@ -1,21 +1,20 @@
-/************* 
-Run compiler with following command:
+/*************Run compiler with following command:
 
         sass scss/main.scss assets/styles.css   
 
         OR
 
-        sass --watch scss/main.scss:assets/styles.css 
-   ************************/
+        sass --watch scss/main.scss:assets/styles.css************************/
 /*small icon style*/
 /*BUTTON GRADIENT STYLE*/
 /*FUNCTION BUTTON*/
+/*FUNCTION BUTTON NUMBERS 1 2 3*/
 /*RESTAURANT CARDS AND IMAGES*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
 * {
   /*border-box dosnt change the sizes of items based on margin or pading*/
   box-sizing: border-box;
-  border: 1px solid red;
 }
 
 body {
@@ -40,9 +39,9 @@ body {
   }
   .header .head-logo {
     display: flex;
-    width: 197px;
-    height: 36px;
-    padding: 0px 19px 0px 16px;
+    width: 12.3rem;
+    height: 2.25rem;
+    padding: 0px 1.18rem 0px 1rem;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -88,7 +87,7 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding: 0px 1rem 0px 1rem;
+    padding: 0 1rem 0 1rem;
   }
   .information .info-subtitle {
     color: #353535;
@@ -98,8 +97,8 @@ body {
     font-style: normal;
     font-weight: 100;
     line-height: normal;
-    margin-top: 0px;
-    padding: 0px 1rem 0px 1rem;
+    margin-top: 0;
+    padding: 0 1rem 0 1rem;
   }
   .information .btn-gradient {
     color: #FFF;
@@ -125,6 +124,7 @@ body {
     flex-shrink: 0;
     background-color: #FFF;
     /*this icon dosnt align well*/
+    /*having div inside button causing error w3c*/
   }
   .function .function-title {
     color: #000;
@@ -141,6 +141,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1.4rem;
+    position: relative;
   }
   .function .function-btn {
     width: 80%;
@@ -176,7 +177,8 @@ body {
   }
   .function .function-number {
     position: absolute;
-    margin-right: 79%;
+    right: 85%;
+    margin-top: 7%;
     width: 24px;
     height: 24px;
     flex-shrink: 0;
@@ -186,6 +188,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .function .num2 {
+    top: 37%;
+  }
+  .function .num3 {
+    top: 73%;
   }
   /*RESTAURANTS*/
   .restaurants {
@@ -254,6 +262,7 @@ body {
     line-height: normal;
   }
   .fa-heart {
+    font-size: 1.5rem;
     position: absolute;
     left: 90%;
     bottom: 30%;
@@ -262,8 +271,43 @@ body {
     flex-shrink: 0;
   }
   .fa-heart-filled {
-    color: #9356DC;
-    fill: #9356DC;
+    fill: #9356DC !important;
+  }
+  /*FOOTER*/
+  .footer {
+    display: flex;
+    width: 100%;
+    padding: 1.37rem 1.56rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #353535;
+    color: white;
+    padding-left: 3rem;
+  }
+  .footer .logo-footer {
+    width: 8.599rem;
+    height: 1.68rem;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Shrikhand;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0;
+  }
+  .footer .footer-icon {
+    width: 0.68rem;
+    height: 0.81rem;
+    flex-shrink: 0;
+    padding-right: 1.5rem;
+  }
+  .footer .footer-menu {
+    margin-bottom: 1px;
+  }
+  .footer .footer-menu > * {
+    height: 0.43rem;
   }
 }
 
