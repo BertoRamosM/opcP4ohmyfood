@@ -10,21 +10,101 @@ $black-color: #101010;
 
 $grey-color: #EAEAEA;
 
-$light-grey-color:  #f5f6f6;
+$light-grey-color:  #f6f6f6;
 
 $dark-grey-color: #7E7E7E;
 
 $gradient-color: var(--Button-Gradient, linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%));;
 
+/*HEADER*/
+@mixin header {
+  background-color: $white-color;
+  display: flex;
+  width: 100vw;
+  height: 3.93rem;
+  padding: 0.87rem 5.56rem 0.81rem 5.56rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+/*HEADER LOGO*/
+@mixin head-logo {
+  display: flex;
+  width: 12.3rem;
+  height: 2.25rem;
+  padding: 0px 1.18rem 0px 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/*LOCATION*/
+@mixin location {
+  background-color: $grey-color;
+  display: flex;
+  width: 100vw;
+  height: 3.12rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.06rem;
+  flex-shrink: 0;
+}
 
 /*small icon style*/
 @mixin small-icon{
-    color: black;
+    color: $black-color;
     width: 1rem;
     height: 1rem;
     flex-shrink: 0;
 
 }
+/*LOCATION TEXT*/
+@mixin location-text {
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+/*INFORMATION*/
+@mixin information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $light-grey-color;
+}
+
+/*INFO TITLE*/
+@mixin info-title {
+  color: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0 1rem 0 1rem;
+}
+
+/*INFO SUBTITLE*/
+@mixin info-subtitle {
+  color: #353535;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 1.12rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 0;
+  padding: 0 1rem 0 1rem;
+}
+
+
 /*BUTTON GRADIENT STYLE*/
 @mixin button-gradient {
     color: $white-color;
@@ -41,7 +121,48 @@ $gradient-color: var(--Button-Gradient, linear-gradient(193deg, $secondary-color
     font-weight: 500;
     line-height: normal;
     border: none;
+    margin-bottom: 3rem;
+    transition: opacity 0.5s;
+    cursor: pointer;
+
+
+    &:hover {
+        opacity: 0.7;
+      }
   }
+
+
+
+  /*FUNCTION BUTTON CONTAINER*/
+
+  @mixin function {
+    width: 100%;
+    height: 24.5rem;
+    flex-shrink: 0;
+    background-color: $white-color;
+  }
+
+
+  /*FUNCTION TITLE*/
+  @mixin function-title {
+    color: #000;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /*FUNCTION BUTTON CONTAINER*/
+  @mixin function-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+  }
+
 
 
   /*FUNCTION BUTTON*/
@@ -62,13 +183,14 @@ $gradient-color: var(--Button-Gradient, linear-gradient(193deg, $secondary-color
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  position: relative;
 }
 
 /*FUNCTION BUTTON NUMBERS 1 2 3*/
 @mixin function-number {
   position: absolute;
-  right: 90%;
-  top: 50%;
+  right: 97%;
+  top: 29%;
   width: 24px;
   height: 24px;
   flex-shrink: 0;
@@ -82,6 +204,9 @@ $gradient-color: var(--Button-Gradient, linear-gradient(193deg, $secondary-color
 
 
 
+/*RESTAURANT CONTAINER*/
+
+
 /*RESTAURANT CARDS AND IMAGES*/
 @mixin restaurant-card {
     height: auto;
@@ -92,14 +217,61 @@ $gradient-color: var(--Button-Gradient, linear-gradient(193deg, $secondary-color
     align-items: center;
     flex-direction: column;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-
+    background-position: center;
+    width: 90%;
+    cursor: pointer;
+    border: none;
   }
   
   @mixin restaurant-image {
-    object-fit: cover;
-    width: 95%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
     height: 14.4rem;
     flex-shrink: 0;
     border: none;
-    border-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
   }
+
+
+  /*RESTAURANT PICTURES*/
+  @mixin restaurant-1-palette{
+    background-image: url(../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  }
+
+  @mixin restaurant-2-lanote{
+    background-image: url(../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+  }
+
+  @mixin restaurant-3-francaise{
+    background-image: url(../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  }
+
+  @mixin restaurant-4-delice{
+    background-image: url(../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+  }
+
+  @mixin new-tag {
+    font-family: Roboto;
+    position: absolute;
+    background-color: $tertiary-color;
+    color: #008766;
+    height: 2rem;
+    width: 6rem;
+    top: 7%;
+    right: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 2px;
+  }
+
+
+  /**********************RESTAURANT PAGES*****************************/
+
+  

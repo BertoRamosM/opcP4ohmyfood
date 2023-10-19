@@ -1,0 +1,51 @@
+/*HTML TO USE IT
+
+  <div class="animation-container">
+            <div class="circle red"></div>
+            <div class="circle blue"></div>
+            <div class="circle green"></div>                */
+
+
+@mixin animation-loader{
+.animation-loader {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border: 2px solid transparent;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+}
+
+.circle.red {
+    border-top-color: $primary-color;
+    animation: spin 2s linear infinite; 
+}
+
+.circle.blue {
+    border-top-color: $secondary-color;
+    transform: rotate(120deg);
+    animation: spin 1s linear infinite;
+}
+
+.circle.green {
+    border-top-color: $tertiary-color;
+    transform: rotate(240deg);
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+}
