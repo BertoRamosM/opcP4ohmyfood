@@ -26,27 +26,39 @@
 /*FUNCTION BUTTON*/
 /*FUNCTION BUTTON NUMBERS 1 2 3*/
 /*RESTAURANT CONTAINER*/
+/*RESTAURANT TITLES*/
 /*RESTAURANT CARDS AND IMAGES*/
 /*RESTAURANT PICTURES*/
+/*RESTAURANTS INFO*/
+/*RESTAURANT TEXTS*/
+/*FOOTER*/
 /**********************RESTAURANT PAGES*****************************/
+/*ARROW HEADER*/
+/*RESTAURANT MENU*/
+/*HEART MENU*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
 * {
   /*border-box dosnt change the sizes of items based on margin or pading*/
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   width: 100%;
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 .animation-loader {
-  position: absolute;
-  top: 50%;
-  right: 50%;
+  position: fixed;
+  top: 40%;
+  right: 52%;
   display: none;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.9);
 }
 .animation-loader .animation-loader {
   width: 100px;
@@ -57,8 +69,8 @@ body {
   width: 50px;
   height: 50px;
   position: absolute;
-  border: 2px solid transparent;
-  border-top: 2px solid transparent;
+  border: 5px solid transparent;
+  border-top: 5px solid transparent;
   border-radius: 50%;
   animation: spin 3s linear infinite;
 }
@@ -68,7 +80,6 @@ body {
 }
 .animation-loader .circle.blue {
   border-top-color: #FF79DA;
-  transform: rotate(120deg);
   animation: spin 1s linear infinite;
 }
 .animation-loader .circle.green {
@@ -87,11 +98,11 @@ body {
 
 /*DISPLAY PAGES*/
 .main-page {
-  display: block;
+  display: none;
 }
 
 .palette-page {
-  display: none;
+  display: block;
 }
 
 .note-page {
@@ -107,308 +118,344 @@ body {
 }
 
 /*Mobile first*/
-@media screen and (max-width: 768px) {
-  /*HEADER*/
-  .header {
-    background-color: #FFF;
-    display: flex;
-    width: 100vw;
-    height: 3.93rem;
-    padding: 0.87rem 5.56rem 0.81rem 5.56rem;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  }
-  .header .head-logo {
-    display: flex;
-    width: 12.3rem;
-    height: 2.25rem;
-    padding: 0px 1.18rem 0px 1rem;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  /*LOCATION*/
-  .location {
-    background-color: #EAEAEA;
-    display: flex;
-    width: 100vw;
-    height: 3.12rem;
-    justify-content: center;
-    align-items: center;
-    gap: 1.06rem;
-    flex-shrink: 0;
-  }
-  .location .fa-location-dot {
-    color: #101010;
-    width: 1rem;
-    height: 1rem;
-    flex-shrink: 0;
-  }
-  .location .location-text {
-    font-family: "Roboto";
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-  /*INFORMATION*/
-  .information {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: #f6f6f6;
-  }
-  .information .info-title {
-    color: #000;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    padding: 0 1rem 0 1rem;
-  }
-  .information .info-subtitle {
-    color: #353535;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 1.12rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    margin-top: 0;
-    padding: 0 1rem 0 1rem;
-  }
-  .information .btn-gradient {
-    color: #FFF;
-    width: 13.62rem;
-    height: 3.15rem;
-    flex-shrink: 0;
-    border-radius: 25px;
-    background: var(--Button-Gradient, linear-gradient(193deg, #FF79DA -11.44%, #9356DC 123.93%));
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    text-align: center;
-    font-family: Roboto;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    border: none;
-    margin-bottom: 3rem;
-    transition: opacity 0.5s;
-    cursor: pointer;
-  }
-  .information .btn-gradient:hover {
-    opacity: 0.7;
-  }
-  /*FONCTIONNEMENT*/
-  .function {
-    width: 100%;
-    height: 24.5rem;
-    flex-shrink: 0;
-    background-color: #FFF;
-    /*this icon dosnt align well*/
-  }
-  .function .function-title {
-    color: #000;
-    font-family: Roboto;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-left: 1rem;
-    margin-bottom: 2rem;
-  }
-  .function .function-btn-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.4rem;
-  }
-  .function .function-btn {
-    width: 80%;
-    height: 4.5rem;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background-color: #f6f6f6;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    font-family: Roboto;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    position: relative;
-  }
-  .function .function-icon {
-    color: #101010;
-    width: 1rem;
-    height: 1rem;
-    flex-shrink: 0;
-    margin-right: 1rem;
-    color: #7E7E7E;
-  }
-  .function .fa-mobile-screen-button {
-    margin-right: 0.4rem;
-  }
-  .function .fa-store {
-    color: #9356DC;
-  }
-  .function .function-number {
-    position: absolute;
-    right: 97%;
-    top: 29%;
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    color: white;
-    background-color: #9356DC;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  /*RESTAURANTS SECTION MAIN PAGE*/
-  .restaurants {
-    background-color: #f6f6f6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1.1rem;
-    padding-bottom: 6rem;
-  }
-  .restaurants-title {
-    color: #000;
-    font-family: Roboto;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    width: 17.1rem;
-    align-self: flex-start;
-    flex-shrink: 0;
-    margin-bottom: 0;
-    padding-left: 5%;
-  }
-  .restaurant-card {
-    height: auto;
-    align-self: stretch;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-    background-position: center;
-    width: 90%;
-    cursor: pointer;
-    border: none;
-    position: relative;
-    align-self: center;
-  }
-  .restaurant-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 14.4rem;
-    flex-shrink: 0;
-    border: none;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-  }
-  .restaurant-image-1-palette {
-    background-image: url(../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-  }
-  .restaurant-image-2-lanote {
-    background-image: url(../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-  }
-  .restaurant-image-3-francaise {
-    background-image: url(../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-  }
-  .restaurant-image-4-delice {
-    background-image: url(../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-  }
-  /*NEW TAG*/
-  .new-tag {
-    font-family: Roboto;
-    position: absolute;
-    background-color: #99E2D0;
-    color: #008766;
-    height: 2rem;
-    width: 6rem;
-    top: 7%;
-    right: 7%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border-radius: 2px;
-  }
-  .restaurant-info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-left: 1.5rem;
-    gap: 0;
-    position: relative;
-  }
-  .restaurants-titles h2 {
-    color: #000;
-    font-family: Roboto;
-    font-size: 1.1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
-  .restaurants-titles h3 {
-    margin-bottom: 0.5rem;
-    margin-top: 0;
-    color: #000;
-    font-family: Roboto;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-  /*LIKE ICON*/
-  .heart-main {
-    font-size: 1.5rem;
-    position: absolute;
-    left: 85%;
-    bottom: 30%;
-    width: 1.37rem;
-    height: 1.31rem;
-    flex-shrink: 0;
-    border: none;
-  }
-  .liked-heart {
-    fill: linear-gradient(193deg, #FF79DA -11.44%, #9356DC 123.93%);
-    opacity: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-  /*hide and show hearts*/
-  .heart1, .heart3, .heart4 {
-    opacity: 1;
-  }
-  .heart2 {
-    opacity: 0;
-  }
-  .like-heart2 {
-    opacity: 1;
-  }
+/*HEADER*/
+.header {
+  background-color: #FFF;
+  display: flex;
+  width: 100%;
+  height: 3.93rem;
+  padding: 0.87rem 5.56rem 0.81rem 5.56rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
+.header .head-logo {
+  display: flex;
+  width: 12.3rem;
+  height: 2.25rem;
+  padding: 0px 1.18rem 0px 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/*LOCATION*/
+.location {
+  background-color: #EAEAEA;
+  display: flex;
+  width: 100%;
+  height: 3.12rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.06rem;
+  flex-shrink: 0;
+}
+.location .fa-location-dot {
+  color: #101010;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+.location .location-text {
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+/*INFORMATION*/
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #f6f6f6;
+  gap: 2rem;
+  padding-top: 1.5rem;
+}
+.information .info-title {
+  color: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0 1rem 0 1rem;
+}
+.information .info-subtitle {
+  color: #353535;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 1.12rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 0;
+  padding: 0 1rem 0 1rem;
+}
+.information .btn-gradient {
+  color: #FFF;
+  width: 13.62rem;
+  height: 3.15rem;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: var(--Button-Gradient, linear-gradient(193deg, #FF79DA -11.44%, #9356DC 123.93%));
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+  margin-bottom: 3rem;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+.information .btn-gradient:hover {
+  opacity: 0.7;
+}
+
+/*FONCTIONNEMENT*/
+.function {
+  width: 100%;
+  height: 24.5rem;
+  flex-shrink: 0;
+  background-color: #FFF;
+  padding-top: 2rem;
+  /*this icon dosnt align well*/
+}
+.function .function-title {
+  color: #000;
+  font-family: Roboto;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+.function .function-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+.function .function-btn {
+  width: 80%;
+  height: 4.5rem;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background-color: #f6f6f6;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: relative;
+}
+.function .function-icon {
+  color: #101010;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  margin-right: 1rem;
+  color: #7E7E7E;
+}
+.function .fa-mobile-screen-button {
+  margin-right: 0.4rem;
+}
+.function .fa-store {
+  color: #9356DC;
+}
+.function .function-number {
+  position: absolute;
+  right: 97%;
+  top: 29%;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: white;
+  background-color: #9356DC;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*RESTAURANTS SECTION MAIN PAGE*/
+.restaurants {
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding-bottom: 4rem;
+}
+
+.restaurants-title {
+  color: #000;
+  font-family: Roboto;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 17.1rem;
+  align-self: flex-start;
+  flex-shrink: 0;
+  margin-bottom: 0;
+  padding-left: 5%;
+}
+
+.restaurants-container {
+  width: 100%;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.restaurant-card {
+  height: auto;
+  align-self: stretch;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  background-position: center;
+  width: 90%;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+.restaurant-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 14.4rem;
+  flex-shrink: 0;
+  border: none;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.restaurant-image-1-palette {
+  background-image: url(../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.restaurant-image-2-lanote {
+  background-image: url(../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+
+.restaurant-image-3-francaise {
+  background-image: url(../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
+.restaurant-image-4-delice {
+  background-image: url(../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+/*NEW TAG*/
+.new-tag {
+  font-family: Roboto;
+  position: absolute;
+  background-color: #99E2D0;
+  color: #008766;
+  height: 2rem;
+  width: 6rem;
+  top: 7%;
+  right: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+.restaurant-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+  gap: 0;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.restaurants-titles h2 {
+  color: #000;
+  font-family: Roboto;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-bottom: 0.5rem;
+}
+
+.restaurants-titles h3 {
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  color: #000;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/*LIKE ICON*/
+.heart-main {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 85%;
+  bottom: 30%;
+  width: 1.37rem;
+  height: 1.31rem;
+  flex-shrink: 0;
+  border: none;
+}
+
+.liked-heart {
+  fill: linear-gradient(193deg, #FF79DA -11.44%, #9356DC 123.93%);
+  opacity: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/*hide and show hearts*/
+.heart1, .heart3, .heart4 {
+  opacity: 1;
+}
+
+.heart2 {
+  opacity: 0;
+}
+
+.like-heart2 {
+  opacity: 1;
+}
+
 /*FOOTER*/
 .footer {
   display: flex;
@@ -440,6 +487,10 @@ body {
   padding-right: 1.5rem;
 }
 .footer .footer-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
   margin-bottom: 1px;
 }
 .footer .footer-menu > * {
@@ -451,7 +502,7 @@ body {
   display: flex;
   width: 100%;
   height: 3.93rem;
-  padding: 0.87rem 3.06rem 0.81 1rem;
+  padding: 0.87rem 3.06rem 0.81rem 1rem;
   align-items: center;
   gap: 2.62rem;
   flex-shrink: 0;
@@ -526,8 +577,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 1px;
   padding-left: 0.5rem;
+  padding-top: 2rem;
   color: #000;
   font-family: Roboto;
   font-size: 1rem;
@@ -541,8 +592,9 @@ body {
   height: 3px;
   background-color: #99E2D0;
   position: absolute;
-  bottom: 84%;
+  bottom: 78%;
   left: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 .menu-section .menu-choice {
   width: 100%;
@@ -555,6 +607,8 @@ body {
   position: relative;
   align-self: center;
   width: 95%;
+  margin-top: 0.5rem;
+  margin-top: 1.5rem;
 }
 .menu-section .menu-choice > h3 {
   color: #000;
@@ -629,6 +683,103 @@ body {
 }
 .commander .commander-btn:hover {
   opacity: 0.7;
+}
+
+/*MEDIA QUERY 1024PX*/
+@media screen and (min-width: 768px) {
+  .btn-gradient {
+    margin-bottom: 2rem;
+  }
+  /*need to nest to make it work?*/
+  .function {
+    height: 12rem;
+  }
+  .function .function-title {
+    margin-left: 3.5rem;
+    margin-top: 1rem;
+  }
+  .function .function-btn-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .function .function-btn-container .function-btn {
+    width: 25%;
+  }
+  .restaurants {
+    display: grid;
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-top: 4rem;
+  }
+  .restaurants .restaurant-info {
+    padding-top: 1.5rem;
+  }
+  .restaurants .restaurants-container {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.85rem;
+  }
+  .restaurants .restaurant-card {
+    margin: 1rem;
+  }
+  .restaurants .restaurant-info {
+    padding-bottom: 1rem;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 114px;
+    padding: 30px 25px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+  .footer .logo-footer {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    margin-left: 5rem;
+    margin-right: 1rem;
+  }
+  .footer .footer-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .footer .footer-menu .right-foot-menu {
+    padding-right: 2rem;
+    margin-left: 0;
+  }
+  /*RESTAURANT PAGES +768PX*/
+  .restaurant-menu {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+  }
+  .restaurant-menu .menu-section {
+    width: 80%;
+  }
+  /*END OF MEDIA QUERY*/
+}
+/*scroll bar*/
+::-webkit-scrollbar {
+  width: 6px; /* You can adjust the width */
+}
+
+::-webkit-scrollbar-track {
+  background: #9356DC; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF79DA; /* Thumb color */
+  border-radius: 3px; /* Rounded corners */
 }
 
 /*# sourceMappingURL=styles.css.map */

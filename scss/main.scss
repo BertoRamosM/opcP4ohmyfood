@@ -14,6 +14,8 @@
     
     /*border-box dosnt change the sizes of items based on margin or pading*/
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     
 }
 
@@ -21,25 +23,28 @@ body{
     width: 100%;
     height: 100%;
     margin: 0;
+    padding: 0;
 }
 
 
 .animation-loader{
     @include animation-loader;
-    position: absolute;
-    top: 50%;
-    right: 50%;
+    position: fixed;
+    top: 40%;
+    right: 52%;
     display: none;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 
 /*DISPLAY PAGES*/
 .main-page{
-    display: block;
+    display: none;
  }
 
 .palette-page{
-    display: none;
+    display: block;
 }
 
 .note-page{
@@ -61,7 +66,9 @@ body{
 
 /*Mobile first*/
 
-@media screen and (max-width: 768px){
+    
+
+
 
     /*HEADER*/
     .header{
@@ -167,36 +174,22 @@ body{
 
     /*RESTAURANTS SECTION MAIN PAGE*/
     .restaurants{
-        background-color: $light-grey-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 1.1rem;
-        padding-bottom: 6rem;
+       @include restaurants;
     }
 
     
 
 
     .restaurants-title{
-        color: #000;
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        width: 17.1rem;
-        align-self: flex-start;
-        flex-shrink: 0;
-        margin-bottom: 0;
-        padding-left: 5%;
+        @include restaurants-title;
+    }
+
+    .restaurants-container{
+        @include restaurants-container;
     }
 
     .restaurant-card{
        @include restaurant-card;
-       position: relative;
-       align-self: center;
     }
 
         .restaurant-image{
@@ -225,53 +218,26 @@ body{
         }
 
         .restaurant-info{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            padding-left: 1.5rem;
-            gap: 0;
-            position: relative;
+            @include restaurant-info;
         }
 
         .restaurants-titles h2{
-            color: #000;
-            font-family: Roboto;
-            font-size: 1.1rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
+        @include restaurants-titles-h2;
         }
 
 
         .restaurants-titles h3{
-            margin-bottom: 0.5rem;
-            margin-top: 0;
-            color: #000;
-            font-family: Roboto;
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
+           @include restaurants-titles-h3;
         }
 
 
         /*LIKE ICON*/
         .heart-main{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 85%;
-            bottom: 30%;
-            width: 1.37rem;
-            height: 1.31rem;
-            flex-shrink: 0;
-            border: none;
+            @include heart-main;
         }
 
         .liked-heart{
-            fill: linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%);
-            opacity: 0;
-            width: 1.50rem;
-            height: 1.50rem;
+           @include liked-heart;
         }
 
         
@@ -288,50 +254,26 @@ body{
             opacity: 1;
         }
 
-}
+
 
 
 
  /*FOOTER*/
  .footer{
-    display: flex;
-    width: 100%;
-    padding: 1.37rem 1.56rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    background-color: #353535;
-    color: white;
-    padding-left: 3rem;
+    @include footer;
     
-    
-    
-
-
-
         .logo-footer{
-            width: 8.599rem;
-            height: 1.68rem;
-            flex-shrink: 0;
-            color: #FFF;
-            font-family: Shrikhand;
-            font-size: 1.1rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;    
-            margin-bottom: 0;
+          @include logo-footer;
             
         }
 
         .footer-icon{
-            width: 0.68rem;
-            height: 0.81rem;
-            flex-shrink: 0;
-            padding-right: 1.5rem;
+            @include footer-icon;
         }
 
 
         .footer-menu{
+            @include footer-menu;
            margin-bottom: 1px;
         }
 
@@ -349,77 +291,31 @@ body{
 
 /*RESTAURANT PAGES*/
 .restaurant-header{
-    display: flex;
-    width: 100%;
-    height: 3.93rem;
-    padding: 0.87rem 3.06rem 0.81 1rem;
-    align-items: center;
-    gap: 2.62rem;
-    flex-shrink: 0;
-    margin-top: 10px;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    position: relative;
+   @include restaurant-header;
 
 
 
         .header-restaurant-title{
-            font-family: Shrikhand;
-            display: flex;
-            width: 12.3rem;
-            height: 2.25rem;
-            padding: 0px 19px 0px 16px;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
+            @include header-restaurant-title;
         }
 
         .left-arrow{
-            width: 1.87rem;
-            height: 1.87rem;
-            flex-shrink: 0;
-            padding-left: 2rem;
-            position: absolute;
-            top: 35%;
-            left: 0%;
+           @include left-arrow;
         }
 }
 
 
 
 .restaurant-menu{
-    display: flex;
-    padding-top: 20px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    width: 100%;
-    z-index: 2;
-    margin-top: -40px;
-    align-items: center;
-    justify-content: center;
-    background-color: $light-grey-color;
-    
+    @include restaurant-menu;
 
     .restaurant-title-menu{
-        font-family: Shrikhand;
-        height: 1.75rem;
-        flex-shrink: 0;
-        color: $black-color;
-        font-size: 1.75rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        
-       
+        @include restaurant-title-menu;
     }
 
 
     .heart-menu{
-        font-size: 1.4rem;
-        padding-top: 1rem;
+       @include heart-menu;
         
     }
 
@@ -428,118 +324,46 @@ body{
 
 
 .menu-section{
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    background-color: $light-grey-color;
-    position: relative;
-    padding-bottom: 1rem;
-    width: 100%;
+    @include menu-section;
     
     
 
 
         .menu-title{
-            display: flex;
-            width: auto;
-            height: 1.68rem;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            margin-bottom: 1px;
-            padding-left: 0.5rem;
-            color: #000;
-            font-family: Roboto;
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 200;
-            line-height: normal;
-            text-transform: uppercase;
+           @include menu-title;
         }
 
 
 
         .green-line{
-            width: 40px;
-            height: 3px;
-            background-color: $tertiary-color;
-            position: absolute;
-            bottom: 84%;
-            left: 0.5rem;
+            @include green-line;
         }
 
         .menu-choice{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            height: 4.31rem;
-            border-radius: 15.043px;
-            background: $white-color;
-            box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
-            position: relative;
-            align-self: center;
-            width: 95%;
+            @include menu-choice;
         }
 
         .menu-choice > h3{
-            color: #000;
-            font-family: Roboto;
-            font-size: 1.12rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
-            flex-shrink: 0;
-            padding: 0;
-            margin: 0;
-            width: 90%;
-            padding-top: 0.5rem;
-            padding-left: 1.2rem;
+            @include menu-choice-h3;
         }   
 
 
     
 
         .menu-choice > h5{
-            color: #000;                
-            font-family: Roboto;
-            font-size: 0.93rem;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-            flex-shrink: 0;
-            padding: 0;
-            margin: 0;
-            width: 90%;
-            padding-left: 1.2rem;
-            padding-bottom: 0.3rem;
-            padding-right: 1rem;
+            @include menu-choice-h5;
         }
 
 
 
         .menu-choice > h4{
-            color: #353535;
-            text-align: center;
-            font-family: Roboto;
-            font-size: 0.93rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
-            padding: 0;
-            margin: 0;
-            width: 10%;
-            position: absolute;
-            right: 5%;
-            bottom: 25%;
+            @include menu-choice-h4;
         }
 
 }
 
     .commander{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $light-grey-color;
+        @include commander;
 
 
         .commander-btn{
@@ -550,3 +374,154 @@ body{
 
 
 
+
+    /*MEDIA QUERY 1024PX*/
+    @media screen and (min-width: 768px){
+
+
+        .btn-gradient{
+            margin-bottom: 2rem;
+        }
+
+        /*need to nest to make it work?*/
+        .function{
+            height: 12rem;
+           
+            .function-title{
+                margin-left: 3.5rem;
+                margin-top: 1rem;
+                
+            }
+        .function-btn-container{
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+           
+
+            .function-btn{
+                width: 25%;
+                
+            }
+        }
+    }
+
+
+
+        .restaurants{
+            display: grid;
+            width: 100%;
+            padding-bottom: 1rem;
+            margin-top: 4rem;
+
+
+
+            .restaurant-info{
+                padding-top: 1.5rem;
+           
+        }
+
+            .restaurants-container{
+                    width: 90vw;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 2rem;
+                    justify-content: center;
+                    align-items: center;
+                    padding-bottom: 0.85rem;
+                    
+
+            }
+            .restaurant-card{
+                margin: 1rem;
+                
+               
+            }
+
+            .restaurant-info{
+                padding-bottom: 1rem;
+            }
+        }
+
+
+
+        .footer{
+            
+            display: flex;
+            flex-direction: row-reverse;
+            height: 114px;
+            padding: 30px 25px;
+            justify-content: flex-start;
+            align-items: flex-end;
+            flex-shrink: 0;
+
+
+.logo-footer{
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    margin-left: 5rem;
+    margin-right: 1rem;
+}
+
+
+
+                .footer-menu{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1.5rem;
+                    padding-bottom: 1.5rem;
+                    
+
+
+                    .right-foot-menu{
+                        padding-right: 2rem;
+                        margin-left: 0;
+                    }
+                }
+        }
+
+
+
+        /*RESTAURANT PAGES +768PX*/
+
+       
+        .restaurant-menu{
+            display: flex;
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+
+            .menu-section{
+                width: 80%;
+            }
+        }
+
+
+
+
+
+
+
+
+
+/*END OF MEDIA QUERY*/
+}
+    
+
+
+
+
+/*scroll bar*/
+
+::-webkit-scrollbar {
+    width: 6px; /* You can adjust the width */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $primary-color; /* Track color */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: $secondary-color; /* Thumb color */
+    border-radius: 3px; /* Rounded corners */
+  }
