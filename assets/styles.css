@@ -11,31 +11,8 @@
             <div class="circle red"></div>
             <div class="circle blue"></div>
             <div class="circle green"></div>                */
-/*HEADER*/
-/*HEADER LOGO*/
-/*LOCATION*/
-/*small icon style*/
-/*LOCATION TEXT*/
-/*INFORMATION*/
-/*INFO TITLE*/
-/*INFO SUBTITLE*/
 /*BUTTON GRADIENT STYLE*/
-/*FUNCTION BUTTON CONTAINER*/
-/*FUNCTION TITLE*/
-/*FUNCTION BUTTON CONTAINER*/
-/*FUNCTION BUTTON*/
-/*FUNCTION BUTTON NUMBERS 1 2 3*/
-/*RESTAURANT CONTAINER*/
-/*RESTAURANT TITLES*/
-/*RESTAURANT CARDS AND IMAGES*/
-/*RESTAURANT PICTURES*/
-/*RESTAURANTS INFO*/
-/*RESTAURANT TEXTS*/
-/*FOOTER*/
-/**********************RESTAURANT PAGES*****************************/
-/*ARROW HEADER*/
-/*RESTAURANT MENU*/
-/*HEART MENU*/
+/*small icon style*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
 * {
@@ -98,11 +75,11 @@ body {
 
 /*DISPLAY PAGES*/
 .main-page {
-  display: none;
+  display: block;
 }
 
 .palette-page {
-  display: block;
+  display: none;
 }
 
 .note-page {
@@ -497,7 +474,7 @@ body {
   height: 0.43rem;
 }
 
-/*RESTAURANT PAGES*/
+/**************RESTAURANT PAGES***********/
 .restaurant-header {
   display: flex;
   width: 100%;
@@ -532,6 +509,7 @@ body {
   position: absolute;
   top: 35%;
   left: 0%;
+  cursor: pointer;
 }
 
 .restaurant-menu {
@@ -757,14 +735,26 @@ body {
     margin-left: 0;
   }
   /*RESTAURANT PAGES +768PX*/
-  .restaurant-menu {
-    display: flex;
-    width: 80%;
-    justify-content: center;
-    align-items: center;
+  .menu-title {
+    margin-left: 2rem;
   }
-  .restaurant-menu .menu-section {
+  .green-line {
+    margin-left: 2rem;
+  }
+  .restaurant-menu {
     width: 80%;
+    margin-left: 10%;
+  }
+  .menu-section {
+    width: 80%;
+    left: 10%;
+  }
+  .commander {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .menu-choice {
+    padding-top: 0.5rem;
   }
   /*END OF MEDIA QUERY*/
 }
