@@ -13,8 +13,113 @@
             <div class="circle green"></div>                */
 /*BUTTON GRADIENT STYLE*/
 /*small icon style*/
+/****************HEART STYLES*****************/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
+.heart-container {
+  position: relative;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+.liked-heart {
+  fill: linear-gradient(193deg, #FF79DA -11.44%, #9356DC 123.93%);
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-left: 1.1rem;
+}
+
+.unliked-heart {
+  font-size: 1.6rem;
+  z-index: 99;
+  margin-left: 1rem;
+  position: absolute;
+}
+
+.main-heart-container {
+  transform: translateY(-1rem);
+}
+
+.heart-main {
+  font-size: 1.6rem;
+  position: absolute;
+  left: 85%;
+  bottom: 30%;
+  flex-shrink: 0;
+  border: none;
+}
+
+.unliked-heart {
+  opacity: 1;
+  transition: opacity 0s;
+}
+
+.liked-heart {
+  opacity: 0;
+  transform: scale(1);
+  transition: transform 1s, opacity 1s;
+}
+
+.heart-container:hover .unliked-heart {
+  opacity: 0;
+}
+
+.heart-container:hover .liked-heart {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.heart-container:hover .liked-heart,
+.heart-container .liked-heart {
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.add-icon {
+  color: #99E2D0;
+  background-color: #99E2D0;
+  position: absolute;
+  font-size: 1.8rem;
+  right: 0;
+  top: 0%;
+  height: 100%;
+  width: 0%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: width 0.5s;
+}
+
+.fa-circle-check {
+  background-color: white;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.menu-choice:hover .add-icon {
+  width: 4.5rem;
+  margin-left: 10%;
+}
+
+/*scroll bar*/
+::-webkit-scrollbar {
+  width: 6px; /* You can adjust the width */
+}
+
+::-webkit-scrollbar-track {
+  background: #9356DC; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF79DA; /* Thumb color */
+  border-radius: 3px; /* Rounded corners */
+}
+
 * {
   /*border-box dosnt change the sizes of items based on margin or pading*/
   box-sizing: border-box;
@@ -35,7 +140,7 @@ body {
   right: 52%;
   display: none;
   z-index: 999;
-  background: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .animation-loader .animation-loader {
   width: 100px;
@@ -43,8 +148,8 @@ body {
   position: relative;
 }
 .animation-loader .circle {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   border: 5px solid transparent;
   border-top: 5px solid transparent;
@@ -61,7 +166,6 @@ body {
 }
 .animation-loader .circle.green {
   border-top-color: #99E2D0;
-  transform: rotate(240deg);
   animation: spin 3s linear infinite;
 }
 @keyframes spin {
@@ -73,25 +177,13 @@ body {
   }
 }
 
-/*DISPLAY PAGES*/
 .main-page {
-  display: block;
+  /*filter: blur(10px);*/
 }
 
-.palette-page {
-  display: none;
-}
-
-.note-page {
-  display: none;
-}
-
-.francaise-page {
-  display: none;
-}
-
-.delice-page {
-  display: none;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /*Mobile first*/
@@ -331,8 +423,6 @@ body {
   height: 14.4rem;
   flex-shrink: 0;
   border: none;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
 }
 
 .restaurant-image-1-palette {
@@ -399,38 +489,6 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-/*LIKE ICON*/
-.heart-main {
-  font-size: 1.5rem;
-  position: absolute;
-  left: 85%;
-  bottom: 30%;
-  width: 1.37rem;
-  height: 1.31rem;
-  flex-shrink: 0;
-  border: none;
-}
-
-.liked-heart {
-  fill: linear-gradient(193deg, #FF79DA -11.44%, #9356DC 123.93%);
-  opacity: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-/*hide and show hearts*/
-.heart1, .heart3, .heart4 {
-  opacity: 1;
-}
-
-.heart2 {
-  opacity: 0;
-}
-
-.like-heart2 {
-  opacity: 1;
 }
 
 /*FOOTER*/
@@ -504,10 +562,11 @@ body {
 .restaurant-header .left-arrow {
   width: 1.87rem;
   height: 1.87rem;
+  font-size: 1.87rem;
   flex-shrink: 0;
   padding-left: 2rem;
   position: absolute;
-  top: 35%;
+  top: 20%;
   left: 0%;
   cursor: pointer;
 }
@@ -533,10 +592,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-.restaurant-menu .heart-menu {
-  font-size: 1.4rem;
-  padding-top: 1rem;
+  z-index: 99;
 }
 
 .menu-section {
@@ -547,6 +603,9 @@ body {
   position: relative;
   padding-bottom: 1rem;
   width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-section .menu-title {
   display: flex;
@@ -575,11 +634,11 @@ body {
   margin-bottom: 1.5rem;
 }
 .menu-section .menu-choice {
-  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   height: 4.31rem;
-  border-radius: 15.043px;
+  border-radius: 20px;
   background: #FFF;
   box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -587,6 +646,7 @@ body {
   width: 95%;
   margin-top: 0.5rem;
   margin-top: 1.5rem;
+  overflow: hidden;
 }
 .menu-section .menu-choice > h3 {
   color: #000;
@@ -598,9 +658,13 @@ body {
   flex-shrink: 0;
   padding: 0;
   margin: 0;
-  width: 90%;
+  width: 75%;
   padding-top: 0.5rem;
   padding-left: 1.2rem;
+  float: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-section .menu-choice > h5 {
   color: #000;
@@ -612,10 +676,13 @@ body {
   flex-shrink: 0;
   padding: 0;
   margin: 0;
-  width: 90%;
+  width: 70%;
   padding-left: 1.2rem;
   padding-bottom: 0.3rem;
   padding-right: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-section .menu-choice > h4 {
   color: #353535;
@@ -625,12 +692,15 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  padding: 0;
-  margin: 0;
-  width: 10%;
-  position: absolute;
-  right: 5%;
-  bottom: 25%;
+  align-self: baseline;
+  margin-top: 1.87rem;
+  margin-left: 15%;
+  transform: translateX(0);
+  transition: transform 0.5s;
+}
+.menu-section .menu-choice:hover h4 {
+  transform: translateX(-5rem);
+  transition: transform 0.5s;
 }
 
 .commander {
@@ -663,7 +733,7 @@ body {
   opacity: 0.7;
 }
 
-/*MEDIA QUERY 1024PX*/
+/***************MEDIA QUERY 1024PX***************/
 @media screen and (min-width: 768px) {
   .btn-gradient {
     margin-bottom: 2rem;
@@ -757,19 +827,6 @@ body {
     padding-top: 0.5rem;
   }
   /*END OF MEDIA QUERY*/
-}
-/*scroll bar*/
-::-webkit-scrollbar {
-  width: 6px; /* You can adjust the width */
-}
-
-::-webkit-scrollbar-track {
-  background: #9356DC; /* Track color */
-}
-
-::-webkit-scrollbar-thumb {
-  background: #FF79DA; /* Thumb color */
-  border-radius: 3px; /* Rounded corners */
 }
 
 /*# sourceMappingURL=styles.css.map */

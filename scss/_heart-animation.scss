@@ -1,0 +1,64 @@
+/****************HEART STYLES*****************/
+.heart-container{
+  position: relative;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+
+.liked-heart{
+  fill: linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%);
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-left: 1.1rem;
+}
+.unliked-heart{
+  font-size: 1.6rem;
+  z-index: 99;
+  margin-left: 1rem;
+  position: absolute;
+}
+
+.main-heart-container{
+  transform: translateY(-1rem);
+}
+.heart-main{
+  font-size: 1.6rem;
+  position: absolute;
+  left: 85%;
+  bottom: 30%;
+  flex-shrink: 0;
+  border: none;
+}
+
+
+
+
+.unliked-heart {
+    opacity: 1;
+    transition: opacity 0s;
+  }
+  
+  .liked-heart {
+    opacity: 0;
+    transform: scale(1);
+    transition: transform 1s, opacity 1s;
+  }
+  
+  .heart-container:hover .unliked-heart {
+    opacity: 0;
+  }
+  
+  .heart-container:hover .liked-heart {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  
+  .heart-container:hover .liked-heart,
+  .heart-container .liked-heart {
+    transition: transform 0.5s, opacity 0.5s; 
+  }
+  

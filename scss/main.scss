@@ -1,886 +1,836 @@
-/*************Run compiler with following command:
+        /*************Run compiler with following command:
 
-        sass scss/main.scss assets/styles.css   
+                sass scss/main.scss assets/styles.css   
 
-        OR
-        
-        sass --watch scss/main.scss:assets/styles.css************************/
-@import "_loader-animation";
-@import "_variables";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap');
-
-*{
-    
-    /*border-box dosnt change the sizes of items based on margin or pading*/
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
-}
-
-body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+                OR
+                
+                sass --watch scss/main.scss:assets/styles.css************************/
+        @import "_loader-animation";
+        @import "_variables";
+        @import "_heart-animation";
+        @import "_add-item-animation";
+        @import "_scroll-bar-style";
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap');
 
 
-.animation-loader{
-    @include animation-loader;
-    position: fixed;
-    top: 40%;
-    right: 52%;
-    display: none;
-    z-index: 999;
-    background: rgba(255, 255, 255, 0.9);
-}
-
-
-/*DISPLAY PAGES*/
-.main-page{
-    display: block;
- }
-
-.palette-page{
-    display: none;
-}
-
-.note-page{
-    display: none;
-}
-
-.francaise-page{
-    display: none;
-}
-
-.delice-page{
-    display: none;
-}
-
-
-
-
-
-
-/*Mobile first*/
-
-    
-
-
-
-    /*HEADER*/
-    .header{
-        background-color: $white-color;
-        display: flex;
-        width: 100%;
-        height: 3.93rem;
-        padding: 0.87rem 5.56rem 0.81rem 5.56rem;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 0;
-        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-      
-
-        .head-logo{
-            display: flex;
-            width: 12.3rem;
-            height: 2.25rem;
-            padding: 0px 1.18rem 0px 1rem;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-        }
-    }
-
-    
-
-    /*LOCATION*/
-    .location{
-        background-color: $grey-color;
-        display: flex;
-        width: 100%;
-        height: 3.12rem;
-        justify-content: center;
-        align-items: center;
-        gap: 1.06rem;
-        flex-shrink: 0;
-
-
-
-        .fa-location-dot{
-            color: $black-color;
-            width: 1rem;
-            height: 1rem;
-            flex-shrink: 0;
-        }
-
-
-        .location-text{
-            font-family: "Roboto";
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-        }
-    }
-
-
-    /*INFORMATION*/
-    .information{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background-color: $light-grey-color;
-        gap: 2rem;
-        padding-top: 1.5rem;
-        
-        
-
-
-        .info-title{
-            color: #000;
-            text-align: center;
-            font-family: Roboto;
-            font-size: 2rem;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-            padding: 0 1rem 0 1rem;
-        }
-
-
-        .info-subtitle{
-            color: #353535;
-            text-align: center;
-            font-family: Roboto;
-            font-size: 1.12rem;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-            margin-top: 0;
-            padding: 0 1rem 0 1rem;
-        }
-
-
-        .btn-gradient{
-            color: $white-color;
-            width: 13.62rem;
-            height: 3.15rem;
-            flex-shrink: 0;
-            border-radius: 25px;
-            background: var(--Button-Gradient, linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%));
-            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-            text-align: center;
-            font-family: Roboto;
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
-            border: none;
-            margin-bottom: 3rem;
-            transition: opacity 0.5s;
-            cursor: pointer;
-        
-        
-            &:hover {
-                opacity: 0.7;
-          
-              }
-        }
 
         
-    }
+        *{
+            
+            /*border-box dosnt change the sizes of items based on margin or pading*/
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            
+        }
 
-   
-
-
-    /*FONCTIONNEMENT*/
-    .function{
-        width: 100%;
-    height: 24.5rem;
-    flex-shrink: 0;
-    background-color: $white-color;
-    padding-top: 2rem;
-
-
-        .function-title{
-            color: #000;
-            font-family: Roboto;
-            font-size: 1.5rem;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-            margin-left: 1rem;
-            margin-bottom: 2rem;
+        body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
 
 
-        .function-btn-container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.4rem;
-           
+        .animation-loader{
+            @include animation-loader;
+            position: fixed;
+            top: 40%;
+            right: 52%;
+            display: none;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.9);
         }
 
 
-            .function-btn{
-                width: 80%;
-                height: 4.5rem;
+        .main-page{
+            /*filter: blur(10px);*/
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+
+        /*Mobile first*/
+
+            /*HEADER*/
+            .header{
+                background-color: $white-color;
+                display: flex;
+                width: 100%;
+                height: 3.93rem;
+                padding: 0.87rem 5.56rem 0.81rem 5.56rem;
+                justify-content: center;
+                align-items: center;
                 flex-shrink: 0;
-                border-radius: 20px;
+                box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+            
+
+                .head-logo{
+                    display: flex;
+                    width: 12.3rem;
+                    height: 2.25rem;
+                    padding: 0px 1.18rem 0px 1rem;
+                    justify-content: center;
+                    align-items: center;
+                    flex-shrink: 0;
+                }
+            }
+
+            
+
+            /*LOCATION*/
+            .location{
+                background-color: $grey-color;
+                display: flex;
+                width: 100%;
+                height: 3.12rem;
+                justify-content: center;
+                align-items: center;
+                gap: 1.06rem;
+                flex-shrink: 0;
+
+
+
+                .fa-location-dot{
+                    color: $black-color;
+                    width: 1rem;
+                    height: 1rem;
+                    flex-shrink: 0;
+                }
+
+
+                .location-text{
+                    font-family: "Roboto";
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+            }
+
+
+            /*INFORMATION*/
+            .information{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
                 background-color: $light-grey-color;
-                box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-                border: none;
+                gap: 2rem;
+                padding-top: 1.5rem;
+                
+                
+
+
+                .info-title{
+                    color: #000;
+                    text-align: center;
+                    font-family: Roboto;
+                    font-size: 2rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    padding: 0 1rem 0 1rem;
+                }
+
+
+                .info-subtitle{
+                    color: #353535;
+                    text-align: center;
+                    font-family: Roboto;
+                    font-size: 1.12rem;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+                    margin-top: 0;
+                    padding: 0 1rem 0 1rem;
+                }
+
+
+                .btn-gradient{
+                    color: $white-color;
+                    width: 13.62rem;
+                    height: 3.15rem;
+                    flex-shrink: 0;
+                    border-radius: 25px;
+                    background: var(--Button-Gradient, linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%));
+                    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+                    text-align: center;
+                    font-family: Roboto;
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    border: none;
+                    margin-bottom: 3rem;
+                    transition: opacity 0.5s;
+                    cursor: pointer;
+                
+                
+                    &:hover {
+                        opacity: 0.7;
+                
+                    }
+                }
+
+                
+            }
+
+        
+
+
+            /*FONCTIONNEMENT*/
+            .function{
+                width: 100%;
+            height: 24.5rem;
+            flex-shrink: 0;
+            background-color: $white-color;
+            padding-top: 2rem;
+
+
+                .function-title{
+                    color: #000;
+                    font-family: Roboto;
+                    font-size: 1.5rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    margin-left: 1rem;
+                    margin-bottom: 2rem;
+                }
+
+
+                .function-btn-container{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1.4rem;
+                
+                }
+
+
+                    .function-btn{
+                        width: 80%;
+                        height: 4.5rem;
+                        flex-shrink: 0;
+                        border-radius: 20px;
+                        background-color: $light-grey-color;
+                        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+                        border: none;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: #000;
+                        font-family: Roboto;
+                        font-size: 1rem;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        position: relative;
+                    }
+
+
+                    .function-icon{
+                        @include small-icon;
+                        margin-right: 1rem;
+                        color: $dark-grey-color;
+                    }
+
+                    /*this icon dosnt align well*/
+                    .fa-mobile-screen-button{
+                        margin-right: 0.4rem;
+                    }
+
+                    .fa-store{
+                        color: $primary-color;
+                        
+                    }
+
+                    .function-number{
+                    position: absolute;
+                    right: 97%;
+                    top: 29%;
+                    width: 24px;
+                    height: 24px;
+                    flex-shrink: 0;
+                    color: white;
+                    background-color: $primary-color;
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    }
+
+                
+            }
+
+
+
+            /*RESTAURANTS SECTION MAIN PAGE*/
+            .restaurants{
+                background-color: $light-grey-color;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-direction: column;
+                gap: 1.1rem;
+                padding-bottom: 4rem;
+            }
+
+            
+
+
+            .restaurants-title{
+                color: #000;
+                font-family: Roboto;
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                width: 17.1rem;
+                align-self: flex-start;
+                flex-shrink: 0;
+                margin-bottom: 0;
+                padding-left: 5%;
+            }
+
+            .restaurants-container{
+                width: 100%;
+                background-color: $light-grey-color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 1.1rem;
+            }
+
+            .restaurant-card{
+                height: auto;
+                align-self: stretch;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+                background-position: center;
+                width: 90%;
+                cursor: pointer;
+                border: none;
+                position: relative;
+                align-self: center;
+                margin-bottom: 1rem;
+            }
+
+                .restaurant-image{
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    width: 100%;
+                    height: 14.4rem;
+                    flex-shrink: 0;
+                    border: none;
+                    
+                }
+
+                .restaurant-image-1-palette{
+                    background-image: url(../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+                }
+
+                .restaurant-image-2-lanote{
+                    background-image: url(../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+                }
+
+                .restaurant-image-3-francaise{
+                    background-image: url(../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+                }
+
+                .restaurant-image-4-delice{
+                    background-image: url(../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+                }
+
+                /*NEW TAG*/
+                .new-tag{
+                    font-family: Roboto;
+            position: absolute;
+            background-color: $tertiary-color;
+            color: #008766;
+            height: 2rem;
+            width: 6rem;
+            top: 7%;
+            right: 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 2px;
+                }
+
+                .restaurant-info{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 1.5rem;
+            gap: 0;
+            position: relative;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+                }
+
+                .restaurants-titles h2{
+                    color: #000;
+                    font-family: Roboto;
+                    font-size: 1.1rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    padding-bottom: 0.5rem;
+                }
+
+
+                    .restaurants-titles h3{
+                margin-bottom: 0.5rem;
+                margin-top: 0;
                 color: #000;
                 font-family: Roboto;
                 font-size: 1rem;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 400;
                 line-height: normal;
-                position: relative;
-            }
+                    }
 
 
-            .function-icon{
-                @include small-icon;
-                margin-right: 1rem;
-                color: $dark-grey-color;
-            }
-
-            /*this icon dosnt align well*/
-            .fa-mobile-screen-button{
-                margin-right: 0.4rem;
-            }
-
-            .fa-store{
-                color: $primary-color;
-                
-            }
-
-            .function-number{
-            position: absolute;
-            right: 97%;
-            top: 29%;
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            color: white;
-            background-color: $primary-color;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            }
-
-           
-    }
-
-
-
-    /*RESTAURANTS SECTION MAIN PAGE*/
-    .restaurants{
-        background-color: $light-grey-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 1.1rem;
-        padding-bottom: 4rem;
-    }
-
-    
-
-
-    .restaurants-title{
-        color: #000;
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        width: 17.1rem;
-        align-self: flex-start;
-        flex-shrink: 0;
-        margin-bottom: 0;
-        padding-left: 5%;
-    }
-
-    .restaurants-container{
-        width: 100%;
-        background-color: $light-grey-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 1.1rem;
-    }
-
-    .restaurant-card{
-        height: auto;
-        align-self: stretch;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-        background-position: center;
-        width: 90%;
-        cursor: pointer;
-        border: none;
-        position: relative;
-           align-self: center;
-           margin-bottom: 1rem;
-    }
-
-        .restaurant-image{
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 14.4rem;
-            flex-shrink: 0;
-            border: none;
-            border-top-right-radius: 20px;
-            border-top-left-radius: 20px;
-        }
-
-        .restaurant-image-1-palette{
-            background-image: url(../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-        }
-
-        .restaurant-image-2-lanote{
-            background-image: url(../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-        }
-
-        .restaurant-image-3-francaise{
-            background-image: url(../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-        }
-
-        .restaurant-image-4-delice{
-            background-image: url(../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-        }
-
-        /*NEW TAG*/
-        .new-tag{
-            font-family: Roboto;
-    position: absolute;
-    background-color: $tertiary-color;
-    color: #008766;
-    height: 2rem;
-    width: 6rem;
-    top: 7%;
-    right: 7%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border-radius: 2px;
-        }
-
-        .restaurant-info{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-left: 1.5rem;
-    gap: 0;
-    position: relative;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-        }
-
-        .restaurants-titles h2{
-            color: #000;
-            font-family: Roboto;
-            font-size: 1.1rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
-            padding-bottom: 0.5rem;
-        }
-
-
-            .restaurants-titles h3{
-         margin-bottom: 0.5rem;
-        margin-top: 0;
-        color: #000;
-        font-family: Roboto;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-            }
-
-
-        /*LIKE ICON*/
-        .heart-main{
-            font-size: 1.5rem;
-            position: absolute;
-            left: 85%;
-            bottom: 30%;
-            width: 1.37rem;
-            height: 1.31rem;
-            flex-shrink: 0;
-            border: none;
-        }
-
-        .liked-heart{
-            fill: linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%);
-            opacity: 0;
-            width: 1.50rem;
-            height: 1.50rem;
-        }
-
-        
-        /*hide and show hearts*/
-        .heart1, .heart3, .heart4{
-            opacity: 1;
-        }
-
-        .heart2{
-            opacity: 0;
-        }
-
-        .like-heart2{
-            opacity: 1;
-        }
-
-
-
-
-
- /*FOOTER*/
- .footer{
-    display: flex;
-    width: 100%;
-    padding: 1.37rem 1.56rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    background-color: #353535;
-    color: white;
-    padding-left: 3rem;
-    
-        .logo-footer{
-            width: 8.599rem;
-            height: 1.68rem;
-            flex-shrink: 0;
-            color: #FFF;
-            font-family: Shrikhand;
-            font-size: 1.1rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            margin-bottom: 0;
-            
-        }
-
-        .footer-icon{
-            width: 0.68rem;
-            height: 0.81rem;
-            flex-shrink: 0;
-            padding-right: 1.5rem;
-        }
-
-
-        .footer-menu{
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            padding-bottom: 2rem;
-           margin-bottom: 1px;
-        }
-
-        .footer-menu > *{
-            height: 0.43rem;
-        }
-
-        
-}
-
-
-
-
-
-
-/**************RESTAURANT PAGES***********/
-.restaurant-header{
-    display: flex;
-    width: 100%;
-    height: 3.93rem;
-    padding: 0.87rem 3.06rem 0.81rem 1rem;
-    align-items: center;
-    gap: 2.62rem;
-    flex-shrink: 0;
-    margin-top: 10px;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    position: relative;
-
-
-
-        .header-restaurant-title{
-            font-family: Shrikhand;
-            display: flex;
-            width: 12.3rem;
-            height: 2.25rem;
-            padding: 0px 19px 0px 16px;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-        }
-
-        .left-arrow{
-            width: 1.87rem;
-            height: 1.87rem;
-            flex-shrink: 0;
-            padding-left: 2rem;
-            position: absolute;
-            top: 35%;
-            left: 0%;
-            cursor: pointer;
-        }
-}
-
-
-
-.restaurant-menu{
-    display: flex;
-    padding-top: 20px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    width: 100%;
-    z-index: 2;
-    margin-top: -40px;
-    align-items: center;
-    justify-content: center;
-    background-color: $light-grey-color;
-
-    .restaurant-title-menu{
-        font-family: Shrikhand;
-        height: 1.75rem;
-        flex-shrink: 0;
-        color: $black-color;
-        font-size: 1.75rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
-
-
-    .heart-menu{
-        font-size: 1.4rem;
-        padding-top: 1rem;
-    }
-
-}
-
-
-
-.menu-section{
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    background-color: $light-grey-color;
-    position: relative;
-    padding-bottom: 1rem;
-    width: 100%;
-    
-    
-
-
-        .menu-title{
-            display: flex;
-            width: auto;
-            height: 1.68rem;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding-left: 0.5rem;
-            padding-top: 2rem;
-            color: #000;
-            font-family: Roboto;
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 200;
-            line-height: normal;
-            text-transform: uppercase;
-        }
-
-
-
-        .green-line{
-        width: 40px;
-        height: 3px;
-        background-color: $tertiary-color;
-        position: absolute;
-        bottom: 78%;
-        left: 0.5rem;
-        margin-bottom: 1.5rem;
-        }
-
-        .menu-choice{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            height: 4.31rem;
-            border-radius: 15.043px;
-            background: $white-color;
-            box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
-            position: relative;
-            align-self: center;
-            width: 95%;
-            margin-top: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .menu-choice > h3{
-            color: #000;
-            font-family: Roboto;
-            font-size: 1.12rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
-            flex-shrink: 0;
-            padding: 0;
-            margin: 0;
-            width: 90%;
-            padding-top: 0.5rem;
-            padding-left: 1.2rem;
-        }   
-
-
-    
-
-        .menu-choice > h5{
-            color: #000;
-            font-family: Roboto;
-            font-size: 0.93rem;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-            flex-shrink: 0;
-            padding: 0;
-            margin: 0;
-            width: 90%;
-            padding-left: 1.2rem;
-            padding-bottom: 0.3rem;
-            padding-right: 1rem;
-        }
-
-
-
-        .menu-choice > h4{
-        color: #353535;
-        text-align: center;
-        font-family: Roboto;
-        font-size: 0.93rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        padding: 0;
-        margin: 0;
-        width: 10%;
-        position: absolute;
-        right: 5%;
-        bottom: 25%;
-        }
-
-}
-
-    .commander{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $light-grey-color;
-
-
-        .commander-btn{
-            @include button-gradient;
-            margin: 2.5rem 0 2.5rem 0;
-        }
-    }
-
-
-
-
-    /*MEDIA QUERY 1024PX*/
-    @media screen and (min-width: 768px){
-
-
-        .btn-gradient{
-            margin-bottom: 2rem;
-        }
-
-        /*need to nest to make it work?*/
-        .function{
-            height: 12rem;
-           
-            .function-title{
-                margin-left: 3.5rem;
-                margin-top: 1rem;
-                
-            }
-        .function-btn-container{
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-           
-
-            .function-btn{
-                width: 25%;
-                
-            }
-        }
-    }
-
-
-
-        .restaurants{
-            display: grid;
-            width: 100%;
-            padding-bottom: 1rem;
-            margin-top: 4rem;
-
-
-
-            .restaurant-info{
-                padding-top: 1.5rem;
-           
-        }
-
-            .restaurants-container{
-                    width: 90vw;
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 2rem;
-                    justify-content: center;
-                    align-items: center;
-                    padding-bottom: 0.85rem;
-                    
-
-            }
-            .restaurant-card{
-                margin: 1rem;
-                
                
-            }
-
-            .restaurant-info{
-                padding-bottom: 1rem;
-            }
-        }
 
 
 
+
+
+        /*FOOTER*/
         .footer{
             display: flex;
-            flex-direction: row-reverse;
-            height: 114px;
-            padding: 30px 25px;
-            justify-content: flex-start;
-            align-items: flex-end;
-            flex-shrink: 0;
+            width: 100%;
+            padding: 1.37rem 1.56rem;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            background-color: #353535;
+            color: white;
+            padding-left: 3rem;
+            
+                .logo-footer{
+                    width: 8.599rem;
+                    height: 1.68rem;
+                    flex-shrink: 0;
+                    color: #FFF;
+                    font-family: Shrikhand;
+                    font-size: 1.1rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    margin-bottom: 0;
+                    
+                }
 
-
-.logo-footer{
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    margin-left: 5rem;
-    margin-right: 1rem;
-}
-
+                .footer-icon{
+                    width: 0.68rem;
+                    height: 0.81rem;
+                    flex-shrink: 0;
+                    padding-right: 1.5rem;
+                }
 
 
                 .footer-menu{
                     display: flex;
-                    flex-direction: row;
-                    gap: 1.5rem;
-                    padding-bottom: 1.5rem;
-                    
+                    flex-direction: column;
+                    gap: 2rem;
+                    padding-bottom: 2rem;
+                margin-bottom: 1px;
+                }
+
+                .footer-menu > *{
+                    height: 0.43rem;
+                }
+
+                
+        }
 
 
-                    .right-foot-menu{
-                        padding-right: 2rem;
-                        margin-left: 0;
-                    }
+
+
+
+
+        /**************RESTAURANT PAGES***********/
+        .restaurant-header{
+            display: flex;
+            width: 100%;
+            height: 3.93rem;
+            padding: 0.87rem 3.06rem 0.81rem 1rem;
+            align-items: center;
+            gap: 2.62rem;
+            flex-shrink: 0;
+            margin-top: 10px;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            position: relative;
+
+
+
+                .header-restaurant-title{
+                    font-family: Shrikhand;
+                    display: flex;
+                    width: 12.3rem;
+                    height: 2.25rem;
+                    padding: 0px 19px 0px 16px;
+                    justify-content: center;
+                    align-items: center;
+                    flex-shrink: 0;
+                }
+
+                .left-arrow{
+                    width: 1.87rem;
+                    height: 1.87rem;
+                    font-size: 1.87rem;
+                    flex-shrink: 0;
+                    padding-left: 2rem;
+                    position: absolute;
+                    top: 20%;
+                    left: 0%;
+                    cursor: pointer;
                 }
         }
 
 
 
-        /*RESTAURANT PAGES +768PX*/
-
-        
-        .menu-title{
-            margin-left: 2rem;
-        }
-        .green-line{
-            margin-left: 2rem;
-        }
-
-
-
-        
         .restaurant-menu{
-            width: 80%;
-            margin-left: 10%;
+            display: flex;
+            padding-top: 20px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            width: 100%;
+            z-index: 2;
+            margin-top: -40px;
+            align-items: center;
+            justify-content: center;
+            background-color: $light-grey-color;
+        
+
+            .restaurant-title-menu{
+                font-family: Shrikhand;
+                height: 1.75rem;
+                flex-shrink: 0;
+                color: $black-color;
+                font-size: 1.75rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                z-index: 99;
+            }
+
+
+            
+
         }
 
-        
+
+
         .menu-section{
-            width: 80%;
-             left: 10%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            background-color: $light-grey-color;
+            position: relative;
+            padding-bottom: 1rem;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+            
+
+
+                .menu-title{
+                    display: flex;
+                    width: auto;
+                    height: 1.68rem;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding-left: 0.5rem;
+                    padding-top: 2rem;
+                    color: #000;
+                    font-family: Roboto;
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 200;
+                    line-height: normal;
+                    text-transform: uppercase;
+                }
+
+
+
+                .green-line{
+                width: 40px;
+                height: 3px;
+                background-color: $tertiary-color;
+                position: absolute;
+                bottom: 78%;
+                left: 0.5rem;
+                margin-bottom: 1.5rem;
+                }
+
+                .menu-choice{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    height: 4.31rem;
+                    border-radius: 20px;
+                    background: $white-color;
+                    box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
+                    position: relative;
+                    align-self: center;
+                    width: 95%;
+                    margin-top: 0.5rem;
+                    margin-top: 1.5rem;
+                    overflow: hidden;
+                }
+
+                .menu-choice > h3{
+                    color: #000;
+                    font-family: Roboto;
+                    font-size: 1.12rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    flex-shrink: 0;
+                    padding: 0;
+                    margin: 0;
+                    width: 75%;
+                    padding-top: 0.5rem;
+                    padding-left: 1.2rem;
+                    float: 1;
+                    white-space: nowrap; 
+                    overflow: hidden; 
+                    text-overflow: ellipsis;
+                }   
+
+
+            
+
+                .menu-choice > h5{
+                    color: #000;
+                    font-family: Roboto;
+                    font-size: 0.93rem;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+                    flex-shrink: 0;
+                    padding: 0;
+                    margin: 0;
+                    width: 70%;
+                    padding-left: 1.2rem;
+                    padding-bottom: 0.3rem;
+                    padding-right: 1rem;
+                    white-space: nowrap; 
+                    overflow: hidden; 
+                    text-overflow: ellipsis;
+                }
+
+
+
+                .menu-choice > h4{
+                color: #353535;
+                text-align: center;
+                font-family: Roboto;
+                font-size: 0.93rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                align-self: baseline;
+                margin-top: 1.87rem;
+                margin-left: 15%;
+                transform: translateX(0);
+                transition: transform 0.5s;
+                }
+
+                
+                .menu-choice:hover h4 {
+                    transform: translateX(-5rem);
+                    transition: transform 0.5s;
+                  }
+
+
         }
-        
 
-        .commander{
-            width: 80%;
-            margin-left: 10%;
+            .commander{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $light-grey-color;
+
+
+                .commander-btn{
+                    @include button-gradient;
+                    margin: 2.5rem 0 2.5rem 0;
+                }
+            }
+
+
+
+
+            /***************MEDIA QUERY 1024PX***************/
+            @media screen and (min-width: 768px){
+
+
+                .btn-gradient{
+                    margin-bottom: 2rem;
+                }
+
+                /*need to nest to make it work?*/
+                .function{
+                    height: 12rem;
+                
+                    .function-title{
+                        margin-left: 3.5rem;
+                        margin-top: 1rem;
+                        
+                    }
+                .function-btn-container{
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 3rem;
+                
+
+                    .function-btn{
+                        width: 25%;
+                        
+                    }
+                }
+            }
+
+
+
+                .restaurants{
+                    display: grid;
+                    width: 100%;
+                    padding-bottom: 1rem;
+                    margin-top: 4rem;
+
+
+
+                    .restaurant-info{
+                        padding-top: 1.5rem;
+                
+                }
+
+                    .restaurants-container{
+                            width: 90vw;
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            gap: 2rem;
+                            justify-content: center;
+                            align-items: center;
+                            padding-bottom: 0.85rem;
+                            
+
+                    }
+                    .restaurant-card{
+                        margin: 1rem;
+                        
+                    
+                    }
+
+                    .restaurant-info{
+                        padding-bottom: 1rem;
+                    }
+                }
+
+
+
+                .footer{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    height: 114px;
+                    padding: 30px 25px;
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                    flex-shrink: 0;
+
+
+        .logo-footer{
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            margin-left: 5rem;
+            margin-right: 1rem;
         }
 
-        .menu-choice{
-            padding-top: 0.5rem;
+
+
+                        .footer-menu{
+                            display: flex;
+                            flex-direction: row;
+                            gap: 1.5rem;
+                            padding-bottom: 1.5rem;
+                            
+
+
+                            .right-foot-menu{
+                                padding-right: 2rem;
+                                margin-left: 0;
+                            }
+                        }
+                }
+
+
+
+                /*RESTAURANT PAGES +768PX*/
+
+                
+                .menu-title{
+                    margin-left: 2rem;
+                }
+                .green-line{
+                    margin-left: 2rem;
+                }
+
+
+
+                
+                .restaurant-menu{
+                    width: 80%;
+                    margin-left: 10%;
+                }
+
+                
+                .menu-section{
+                    width: 80%;
+                    left: 10%;
+                }
+                
+
+                .commander{
+                    width: 80%;
+                    margin-left: 10%;
+                }
+
+                .menu-choice{
+                    padding-top: 0.5rem;
+                }
+
+
+
+        /*END OF MEDIA QUERY*/
         }
+            
 
-        
-        
-
-
-
-
-
-/*END OF MEDIA QUERY*/
-}
-    
-
-
-
-
-/*scroll bar*/
-
-::-webkit-scrollbar {
-    width: 6px; /* You can adjust the width */
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: $primary-color; /* Track color */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: $secondary-color; /* Thumb color */
-    border-radius: 3px; /* Rounded corners */
-  }
