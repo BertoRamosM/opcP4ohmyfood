@@ -296,6 +296,9 @@ a {
   margin-bottom: 3rem;
   transition: opacity 0.5s;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .information .btn-gradient:hover {
   opacity: 0.8;

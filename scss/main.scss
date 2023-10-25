@@ -157,7 +157,9 @@
 
                 .btn-gradient{
                     @include button-gradient;
-                   
+                   display: flex;
+                   align-items: center;
+                   justify-content: center;
                 }
 
                 
