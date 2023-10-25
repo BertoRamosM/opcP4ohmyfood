@@ -7,30 +7,25 @@
 
 
 @mixin animation-loader{
-.animation-loader {
-    width: 100px;
-    height: 100px;
-    position: relative;
-}
-
 .circle {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     position: absolute;
     border: 5px solid transparent;
     border-top: 5px solid transparent;
     border-radius: 50%;
-    animation: spin 3s linear infinite;
+    right: 47%;
+    top: 30%;
 }
 
 .circle.red {
     border-top-color: $primary-color;
-    animation: spin 2s linear infinite; 
+    animation: spin 1s linear infinite; 
 }
 
 .circle.blue {
     border-top-color: $secondary-color;
-    animation: spin 1s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
 .circle.green {
@@ -44,6 +39,26 @@
     }
     100% {
         transform: rotate(360deg);
+        
     }
 }
+
 }
+
+
+
+  
+  @keyframes disappear {
+    from {
+      transform: translate(0);
+    }
+    to {
+      transform: translateX(99999px);
+    }
+  }
+  
+  .hide-animation {
+    animation: disappear 0s linear 2s;
+    animation-fill-mode: forwards;
+  }
+

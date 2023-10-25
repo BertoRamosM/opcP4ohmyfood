@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    transition: width 0.5s;
+    transition: 0.5s;
   }
   .fa-circle-check{
     background-color: white;
@@ -27,5 +27,5 @@
     margin-left: 10%;
   }
 
-  
+  /*and push price text in main.scss L667*/
 

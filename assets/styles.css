@@ -4,18 +4,32 @@
 
         OR
 
-        sass --watch scss/main.scss:assets/styles.css************************/
+        sass --watch scss/main.scss:assets/styles.css
+        ************************/
 /*HTML TO USE IT
 
   <div class="animation-container">
             <div class="circle red"></div>
             <div class="circle blue"></div>
             <div class="circle green"></div>                */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
+@keyframes disappear {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translateX(99999px);
+  }
+}
+.hide-animation {
+  animation: disappear 0s linear 2s;
+  animation-fill-mode: forwards;
+}
+
 /*BUTTON GRADIENT STYLE*/
 /*small icon style*/
 /****************HEART STYLES*****************/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
 .heart-container {
   position: relative;
   margin-bottom: 0.5rem;
@@ -92,7 +106,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: width 0.5s;
+  transition: 0.5s;
 }
 
 .fa-circle-check {
@@ -106,6 +120,7 @@
   margin-left: 10%;
 }
 
+/*and push price text in main.scss L667*/
 /*scroll bar*/
 ::-webkit-scrollbar {
   width: 6px; /* You can adjust the width */
@@ -120,6 +135,14 @@
   border-radius: 3px; /* Rounded corners */
 }
 
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 * {
   /*border-box dosnt change the sizes of items based on margin or pading*/
   box-sizing: border-box;
@@ -135,34 +158,35 @@ body {
 }
 
 .animation-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
   position: fixed;
-  top: 40%;
-  right: 52%;
-  display: none;
+  display: block;
   z-index: 999;
   background-color: rgba(255, 255, 255, 0.9);
-}
-.animation-loader .animation-loader {
-  width: 100px;
-  height: 100px;
-  position: relative;
+  transition: opacity 2s linear;
 }
 .animation-loader .circle {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   position: absolute;
   border: 5px solid transparent;
   border-top: 5px solid transparent;
   border-radius: 50%;
-  animation: spin 3s linear infinite;
+  right: 47%;
+  top: 30%;
 }
 .animation-loader .circle.red {
   border-top-color: #9356DC;
-  animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
 }
 .animation-loader .circle.blue {
   border-top-color: #FF79DA;
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 .animation-loader .circle.green {
   border-top-color: #99E2D0;
@@ -175,10 +199,6 @@ body {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.main-page {
-  /*filter: blur(10px);*/
 }
 
 a {
@@ -633,6 +653,15 @@ a {
   left: 0.5rem;
   margin-bottom: 1.5rem;
 }
+.menu-section .menu-entrees {
+  animation: slide-in 0.4s;
+}
+.menu-section .menu-plat {
+  animation: slide-in 0.6s;
+}
+.menu-section .menu-dessert {
+  animation: slide-in 0.8s;
+}
 .menu-section .menu-choice {
   display: flex;
   flex-wrap: wrap;
@@ -695,12 +724,10 @@ a {
   align-self: baseline;
   margin-top: 1.87rem;
   margin-left: 15%;
-  transform: translateX(0);
   transition: transform 0.5s;
 }
 .menu-section .menu-choice:hover h4 {
   transform: translateX(-5rem);
-  transition: transform 0.5s;
 }
 
 .commander {
@@ -730,15 +757,15 @@ a {
   margin: 2.5rem 0 2.5rem 0;
 }
 .commander .commander-btn:hover {
-  opacity: 0.7;
+  opacity: 0.8;
+  box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.25);
 }
 
-/***************MEDIA QUERY 1024PX***************/
+/***************MEDIA QUERY*****************/
 @media screen and (min-width: 768px) {
   .btn-gradient {
     margin-bottom: 2rem;
   }
-  /*need to nest to make it work?*/
   .function {
     height: 12rem;
   }
@@ -779,6 +806,7 @@ a {
   .restaurants .restaurant-info {
     padding-bottom: 1rem;
   }
+  /*FOOTER MQ*/
   .footer {
     display: flex;
     flex-direction: row-reverse;
@@ -804,7 +832,7 @@ a {
     padding-right: 2rem;
     margin-left: 0;
   }
-  /*RESTAURANT PAGES +768PX*/
+  /*RESTAURANT PAGES MQ*/
   .menu-title {
     margin-left: 2rem;
   }
@@ -826,7 +854,6 @@ a {
   .menu-choice {
     padding-top: 0.5rem;
   }
-  /*END OF MEDIA QUERY*/
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -4,12 +4,14 @@
 
                 OR
                 
-                sass --watch scss/main.scss:assets/styles.css************************/
+                sass --watch scss/main.scss:assets/styles.css
+                ************************/
         @import "_loader-animation";
         @import "_variables";
         @import "_heart-animation";
         @import "_add-item-animation";
         @import "_scroll-bar-style";
+        @import "_restaurant-page-animation";
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap');
 
@@ -34,20 +36,22 @@
 
 
         .animation-loader{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
             @include animation-loader;
             position: fixed;
-            top: 40%;
-            right: 52%;
-            display: none;
+            display: block;
             z-index: 999;
             background-color: rgba(255, 255, 255, 0.9);
+            transition: opacity 2s linear;
         }
 
 
-        .main-page{
-            /*filter: blur(10px);*/
-        }
-
+       
         a{
             text-decoration: none;
             color: inherit;
@@ -589,6 +593,16 @@
                 margin-bottom: 1.5rem;
                 }
 
+                .menu-entrees{
+                    animation: slide-in 0.4s;
+                }
+                .menu-plat{
+                    animation: slide-in 0.6s;
+                }
+                .menu-dessert{
+                    animation: slide-in 0.8s;
+                }
+
                 .menu-choice{
                     display: flex;
                     flex-wrap: wrap;
@@ -659,14 +673,12 @@
                 align-self: baseline;
                 margin-top: 1.87rem;
                 margin-left: 15%;
-                transform: translateX(0);
                 transition: transform 0.5s;
                 }
 
                 
                 .menu-choice:hover h4 {
                     transform: translateX(-5rem);
-                    transition: transform 0.5s;
                   }
 
 
@@ -688,149 +700,160 @@
 
 
 
-            /***************MEDIA QUERY 1024PX***************/
-            @media screen and (min-width: 768px){
 
 
-                .btn-gradient{
-                    margin-bottom: 2rem;
-                }
 
-                /*need to nest to make it work?*/
-                .function{
-                    height: 12rem;
+
+
+
+           /***************MEDIA QUERY*****************/
+
+           
+ @media screen and (min-width: 768px){
+
+
+    .btn-gradient{
+        margin-bottom: 2rem;
+    }
+
+    
+    .function{
+        height: 12rem;
+    
+        .function-title{
+            margin-left: 3.5rem;
+            margin-top: 1rem;
+            
+        }
+    .function-btn-container{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+    
+
+        .function-btn{
+            width: 25%;
+            
+        }
+    }
+}
+
+
+
+    .restaurants{
+        display: grid;
+        width: 100%;
+        padding-bottom: 1rem;
+        margin-top: 4rem;
+
+
+
+        .restaurant-info{
+            padding-top: 1.5rem;
+    
+    }
+
+        .restaurants-container{
+                width: 90vw;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 0.85rem;
                 
-                    .function-title{
-                        margin-left: 3.5rem;
-                        margin-top: 1rem;
-                        
-                    }
-                .function-btn-container{
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 3rem;
+
+        }
+        .restaurant-card{
+            margin: 1rem;
+            
+        
+        }
+
+        .restaurant-info{
+            padding-bottom: 1rem;
+        }
+    }
+
+
+
+   
+   
+  /*FOOTER MQ*/ 
+    .footer{
+        display: flex;
+        flex-direction: row-reverse;
+        height: 114px;
+        padding: 30px 25px;
+        justify-content: flex-start;
+        align-items: flex-end;
+        flex-shrink: 0;
+
+
+.logo-footer{
+font-size: 1.5rem;
+margin-bottom: 0.8rem;
+margin-left: 5rem;
+margin-right: 1rem;
+}
+
+
+
+            .footer-menu{
+                display: flex;
+                flex-direction: row;
+                gap: 1.5rem;
+                padding-bottom: 1.5rem;
                 
 
-                    .function-btn{
-                        width: 25%;
-                        
-                    }
+
+                .right-foot-menu{
+                    padding-right: 2rem;
+                    margin-left: 0;
                 }
             }
+    }
 
 
 
-                .restaurants{
-                    display: grid;
-                    width: 100%;
-                    padding-bottom: 1rem;
-                    margin-top: 4rem;
+    /*RESTAURANT PAGES MQ*/
+
+    
+    .menu-title{
+        margin-left: 2rem;
+    }
+    .green-line{
+        margin-left: 2rem;
+    }
 
 
 
-                    .restaurant-info{
-                        padding-top: 1.5rem;
-                
-                }
+    
+    .restaurant-menu{
+        width: 80%;
+        margin-left: 10%;
+    }
 
-                    .restaurants-container{
-                            width: 90vw;
-                            display: grid;
-                            grid-template-columns: repeat(2, 1fr);
-                            gap: 2rem;
-                            justify-content: center;
-                            align-items: center;
-                            padding-bottom: 0.85rem;
-                            
+    
+    .menu-section{
+        width: 80%;
+        left: 10%;
+    }
+    
 
-                    }
-                    .restaurant-card{
-                        margin: 1rem;
-                        
-                    
-                    }
+    .commander{
+        width: 80%;
+        margin-left: 10%;
+    }
 
-                    .restaurant-info{
-                        padding-bottom: 1rem;
-                    }
-                }
+    .menu-choice{
+        padding-top: 0.5rem;
+    }
 
 
 
-                .footer{
-                    display: flex;
-                    flex-direction: row-reverse;
-                    height: 114px;
-                    padding: 30px 25px;
-                    justify-content: flex-start;
-                    align-items: flex-end;
-                    flex-shrink: 0;
 
+}
 
-        .logo-footer{
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-            margin-left: 5rem;
-            margin-right: 1rem;
-        }
-
-
-
-                        .footer-menu{
-                            display: flex;
-                            flex-direction: row;
-                            gap: 1.5rem;
-                            padding-bottom: 1.5rem;
-                            
-
-
-                            .right-foot-menu{
-                                padding-right: 2rem;
-                                margin-left: 0;
-                            }
-                        }
-                }
-
-
-
-                /*RESTAURANT PAGES +768PX*/
-
-                
-                .menu-title{
-                    margin-left: 2rem;
-                }
-                .green-line{
-                    margin-left: 2rem;
-                }
-
-
-
-                
-                .restaurant-menu{
-                    width: 80%;
-                    margin-left: 10%;
-                }
-
-                
-                .menu-section{
-                    width: 80%;
-                    left: 10%;
-                }
-                
-
-                .commander{
-                    width: 80%;
-                    margin-left: 10%;
-                }
-
-                .menu-choice{
-                    padding-top: 0.5rem;
-                }
-
-
-
-        /*END OF MEDIA QUERY*/
-        }
-            
 
