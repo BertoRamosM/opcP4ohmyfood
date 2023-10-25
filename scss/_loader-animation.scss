@@ -1,10 +1,3 @@
-/*HTML TO USE IT
-
-  <div class="animation-container">
-            <div class="circle red"></div>
-            <div class="circle blue"></div>
-            <div class="circle green"></div>                */
-
 
 @mixin animation-loader{
 .circle {
@@ -14,16 +7,16 @@
     border: 5px solid transparent;
     border-top: 5px solid transparent;
     border-radius: 50%;
-    right: 47%;
+    right: 45%;
     top: 30%;
 }
 
-.circle.red {
+.circle.purple {
     border-top-color: $primary-color;
     animation: spin 1s linear infinite; 
 }
 
-.circle.blue {
+.circle.pink {
     border-top-color: $secondary-color;
     animation: spin 2s linear infinite;
 }
