@@ -1,5 +1,7 @@
 
 @mixin animation-loader{
+
+  /*ADD GENERAL STYLE TO THE 3 LINES*/
 .circle {
     width: 75px;
     height: 75px;
@@ -11,21 +13,27 @@
     top: 30%;
 }
 
+/*STYLE AND ANIMATION FOR PURPLE LINE*/
 .circle.purple {
     border-top-color: $primary-color;
     animation: spin 1s linear infinite; 
 }
 
+/*STYLE AND ANIMATION FOR PINK LINE*/
 .circle.pink {
     border-top-color: $secondary-color;
     animation: spin 2s linear infinite;
 }
 
+/*STYLE AND ANIMATION FOR GREEN LINE*/
 .circle.green {
     border-top-color: $tertiary-color;
     animation: spin 3s linear infinite;
 }
 
+
+
+/*MAKE THE LINES SPIN FROM 0 TO 360*/
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -39,8 +47,7 @@
 }
 
 
-
-  
+/*MAKE LOADER DISAPPEAR AFTER 2 SECONDS BY MOVING IT AWAY*/  
   @keyframes disappear {
     from {
       transform: translate(0);

@@ -14,8 +14,12 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+
+    /*transition for hover*/
     transition: 0.5s;
   }
+
+  /*CIRCLE WITH OK SYMBOL*/
   .fa-circle-check{
     background-color: white;
     border-radius: 50%;
@@ -24,7 +28,7 @@
 
   
 
-  /*animation*/
+  /*ANIMATION*/
 .menu-choice:hover .add-icon {
     width: 4.5rem;
     margin-left: 10%;

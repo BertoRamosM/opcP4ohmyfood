@@ -1,11 +1,14 @@
 /****************HEART STYLES*****************/
+
+/*CONTAINER TO ALIGN BOTH UNLIKED AND LIKED HEART*/
 .heart-container{
   position: relative;
   margin-bottom: 0.5rem;
-  margin-left: 1rem;
+  margin-right: 2rem;
+
 }
 
-
+/*STYLE FOR LIKED/FULL HEART*/
 .liked-heart{
   fill: linear-gradient(193deg, $secondary-color -11.44%, $primary-color 123.93%);
   opacity: 0;
@@ -15,6 +18,8 @@
   height: 1.4rem;
   margin-left: 1.1rem;
 }
+
+/*STYLE FOR EMPTY/UNLIKED HEARTS*/
 .unliked-heart{
   font-size: 1.6rem;
   z-index: 99;
@@ -22,9 +27,9 @@
   position: absolute;
 }
 
-.main-heart-container{
-  transform: translateY(-1rem);
-}
+
+
+/*HEARTS STYLE ON MAIN PAGE*/
 .heart-main{
   font-size: 1.6rem;
   position: absolute;
@@ -36,17 +41,23 @@
 
 
 
-/*heart animations*/
+/*HEART ANIMATIONS*/
+
+/*EMPTY HEART GOES INVISIBLE*/
 .unliked-heart {
     opacity: 1;
     transition: opacity 0.5s;
   }
   
+  /*FULL HEART GOES VISIBLE*/
   .liked-heart {
     opacity: 0;
     transition: transform 1s, opacity 1s;
   }
   
+
+  
+  /*TRIGGER ACTIONS WITH HOVER*/
   .heart-container:hover .unliked-heart {
     opacity: 0;
   }
@@ -56,7 +67,4 @@
     transform: scale(1.2);
   }
   
-  .heart-container:hover .liked-heart{
-    transition: transform 0.5s, opacity 0.5s; 
-  }
-  
+ 

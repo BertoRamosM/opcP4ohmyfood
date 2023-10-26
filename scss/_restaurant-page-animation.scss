@@ -1,8 +1,29 @@
+
+
+/*TRANSLATE THE MENU ITEMS FROM LEFT TO CENTER 
+ON ENTERING THE RESTAURANT PAGES*/
+
+
 @keyframes slide-in {
     0% {
         transform: translateX(-100%);
+    }
+
+    50%{
+        transform: translateX(30px);
     }
     100% {
         transform: translateX(0);
     }
   }
+
+   /*ANIMATION TO ENTER DISHES BY GROUP*/
+   .menu-entrees{
+    animation: slide-in 0.5s ease-in-out;
+}
+.menu-plat{
+    animation: slide-in 0.7s ease-in-out;
+}
+.menu-dessert{
+    animation: slide-in 0.9s ease-in-out;
+}
